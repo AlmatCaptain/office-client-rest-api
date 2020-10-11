@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rooms</title>
+    <script src="jwt-decode.min.js"></script>
+    <script defer type="text/javascript" src="token.js"></script>
+    <!-- <script defer type="text/javascript" src="auth.js"></script> -->
+    <script defer type="text/javascript" src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="employees.html">Employees</a></li>
+          <li><a href="#">Rooms</a></li>
+          <li><a href="reserved.html">Reserved</a></li>
+          <li><p id="userInfo"></p></li>
+        </ul>
+      </nav>
+      <a href="login.html"> <button class="logout">Log out</button></a>
+    </header>
+    <div class="wrapper">
+      <section class="buttons">
+        <form id="addRoom">
+          <div class="add-btn">
+            <input type="number" id="roomNum" placeholder="Room number" />
+            <button type="submit">Add</button>
+          </div>
+        </form>
+      </section>
+      <section class="room-list">
+        <ul id="post">
+          <!-- <li class="room-style">
+                    <p>Room</p><br>
+                    <span> № 77</span>
+                </li> -->
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>

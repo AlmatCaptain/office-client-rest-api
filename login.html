@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="auth.css" />
+    <script defer type="text/javascript" src="token.js"></script>
+    <script defer type="text/javascript" src="auth.js"></script>
+  </head>
+
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <form class="login-form" id="postData">
+          <input type="text" id="name" placeholder="name" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            required
+          />
+          <button id="submit" type="submit">login</button>
+          <p class="message">
+            Not registered? <a href="register.html">Create an account</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees</title>
+    <script src="jwt-decode.min.js"></script>
+    <script defer type="text/javascript" src="token.js"></script>
+    <script defer type="text/javascript" src="employee.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Employees</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="reserved.html">Reserved</a></li>
+          <li><p id="userInfo"></p></li>
+        </ul>
+      </nav>
+      <a href="login.html"> <button class="logout">Log out</button></a>
+    </header>
+    <div class="wrapper">
+      <section class="emp-action">
+        <form id="addEmp">
+          <div class="inputs">
+            <input type="text" id="id" placeholder="ID" />
+            <input type="text" id="name" placeholder="Name" />
+            <input type="text" id="pass" placeholder="Password" />
+          </div>
+          <div class="btns">
+            <button type="submit">Add</button>
+            <input
+              type="button"
+              onclick="editUserName(0,0)"
+              id="editBtn"
+              value="Edit"
+            />
+          </div>
+        </form>
+      </section>
+      <section class="employee-table">
+        <table id="e-table">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Admin</th>
+          </tr>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

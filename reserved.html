@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserved</title>
+    <script src="jwt-decode.min.js"></script>
+    <script src="token.js"></script>
+    <script defer src="reserved.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="employees.html">Employees</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="#">Reserved</a></li>
+          <li><p id="userInfo"></p></li>
+        </ul>
+      </nav>
+      <a href="login.html"> <button class="logout">Log out</button></a>
+    </header>
+    <div class="wrapper">
+      <section class="emp-action">
+        <form id="addEmp">
+          <div class="inputs">
+            <input type="text" placeholder="ID" id="id" />
+            <input type="text" placeholder="Employee ID" id="emp-id" />
+            <input type="number" placeholder="Room number" id="room-num" />
+            <input type="date" placeholder="Date" id="date" />
+            <input type="date" placeholder="To date" id="toDate" />
+          </div>
+          <div class="btns">
+            <button>Add</button>
+            <input
+              type="button"
+              onclick="editReserve(0,0)"
+              id="editBtn"
+              value="Edit"
+            />
+          </div>
+        </form>
+        <!-- <button onclick="editReserve(0,0)" id="editBtn">Edit</button> -->
+      </section>
+      <hr />
+      <section class="buttons">
+        <form>
+          <div class="add-btn">
+            <input type="text" id="roomNum" placeholder="Search Room" />
+            <input type="button" onclick="find()" value="Search" />
+          </div>
+        </form>
+      </section>
+      <section class="res-table">
+        <table id="r-table">
+          <tr>
+            <th>ID</th>
+            <th>Employee ID</th>
+            <th>Room number</th>
+            <th>Date</th>
+            <th>To date</th>
+          </tr>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
