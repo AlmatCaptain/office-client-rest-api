@@ -16,7 +16,7 @@ async function reg(event) {
   }
 
   const response = await fetch(
-    'http://localhost:8080/employees/registration',
+    'http://localhost:8762/api/employees/registration',
     requestOptions
   )
 

@@ -8,7 +8,7 @@ info.innerHTML = `ID: ${myStorage.getItem('id')}<br>UN: ${myStorage.getItem(
 )}`
 
 function getListOfRooms() {
-  fetch('http://localhost:8080/rooms')
+  fetch('http://localhost:8762/api/rooms')
     .then((response) => response.json())
     .then((json) =>
       json.forEach((d) => {
@@ -45,7 +45,7 @@ function deleteBtn(id) {
       })
     }
 
-    fetch(`http://localhost:8080/rooms/admin/${id}`, requestOptions)
+    fetch(`http://localhost:8762/api/rooms/admin/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => window.location.reload())
       .catch((error) => console.log('error', error))
@@ -73,7 +73,7 @@ async function add(event) {
     }
 
     const response = await fetch(
-      'http://localhost:8080/rooms/admin/add',
+      'http://localhost:8762/api/rooms/admin/add',
       requestOptions
     )
 

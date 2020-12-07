@@ -16,7 +16,7 @@ getListOfReserved()
 
 document.getElementById('addEmp').addEventListener('submit', add)
 function getListOfReserved() {
-  fetch('http://localhost:8080/reserves')
+  fetch('http://localhost:8762/reserves')
     .then((response) => response.json())
     .then((json) =>
       json.forEach((d) => {
@@ -118,7 +118,7 @@ async function add(event) {
   }
 
   const response = await fetch(
-    'http://localhost:8080/reserves/add',
+    'http://localhost:8762/api/reserves/add',
     requestOptions
   )
 
@@ -160,7 +160,7 @@ async function editReserve(resId, roomN) {
   }
 
   const response = await fetch(
-    `http://localhost:8080/reserves/update/${id}`,
+    `http://localhost:8762/reserves/update/${id}`,
     requestOptions
   )
 
@@ -178,7 +178,7 @@ function deleteRes(id) {
     })
   }
 
-  fetch(`http://localhost:8080/reserves/delete/${id}`, requestOptions)
+  fetch(`http://localhost:8762/reserves/delete/${id}`, requestOptions)
     .then((response) => response.text())
     .then((result) => window.location.reload())
     .catch((error) => console.log('error', error))
@@ -193,7 +193,7 @@ function find() {
   <th>To date</th>
 </tr>`
   let e = document.getElementById('roomNum').value
-  fetch(`http://localhost:8080/reserves/${e}`)
+  fetch(`http://localhost:8762/reserves/${e}`)
     .then((response) => response.json())
     .then((json) =>
       json.forEach((d) => {

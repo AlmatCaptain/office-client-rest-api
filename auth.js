@@ -4,7 +4,7 @@ async function auth(event) {
   let name = document.getElementById('name').value
   let pass = document.getElementById('password').value
 
-  const res = await fetch('http://localhost:8080/auth', {
+  const res = await fetch('http://localhost:8762/auth/auth', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -14,6 +14,7 @@ async function auth(event) {
 
   const data = await res.text()
   if (res.status == 200) {
+    console.log(data)
     myStorage.setItem('token', data)
     window.location = 'employees.html'
   }

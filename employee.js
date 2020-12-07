@@ -3,7 +3,7 @@ var decoded = jwt_decode(myStorage.getItem('token'))
 document.getElementById('addEmp').addEventListener('submit', add)
 
 function getListOfEmployees() {
-  fetch('http://localhost:8080/employees', {
+  fetch('http://localhost:8762/api/employees', {
     headers: new Headers({
       Authorization: 'Bearer ' + myStorage.getItem('token'),
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -77,7 +77,7 @@ async function changeRole(id, role) {
     }
 
     const response = await fetch(
-      `http://localhost:8080/employees/admin/role/${id}?role=${role}`,
+      `http://localhost:8762/api/employees/admin/role/${id}?role=${role}`,
       requestOptions
     )
 
@@ -99,7 +99,7 @@ function deleteEmployee(id) {
       })
     }
 
-    fetch(`http://localhost:8080/employees/admin/delete/${id}`, requestOptions)
+    fetch(`http://localhost:8762/api/employees/admin/delete/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => window.location.reload())
       .catch((error) => console.log('error', error))
@@ -127,7 +127,7 @@ async function add(event) {
     }
 
     const response = await fetch(
-      'http://localhost:8080/employees/admin/add',
+      'http://localhost:8762/api/employees/admin/add',
       requestOptions
     )
 
@@ -153,7 +153,7 @@ async function editUserName(idd, username) {
     }
 
     const response = await fetch(
-      `http://localhost:8080/employees/admin/update/${id}?name=${name}`,
+      `http://localhost:8762/api/employees/admin/update/${id}?name=${name}`,
       requestOptions
     )
 
